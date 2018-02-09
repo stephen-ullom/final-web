@@ -1,6 +1,6 @@
 # Final-Web Language
 
-Compile oranized XML files into PHP.
+Compile organized XML files into PHP.
 
 ## Basic Example
 
