@@ -1,0 +1,26 @@
+{
+    "name": "final-web",
+    "version": "0.0.1",
+    "description": "Compile XML .web files to PHP.",
+    "main": "index.js",
+    "scripts": {
+        "final": "node final"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Slulego/Final-Web.git"
+      },
+    "keywords": [
+        "final",
+        "web",
+        "html",
+        "xml",
+        "php"
+    ],
+    "author": "Stephen Ullom",
+    "license": "ISC",
+    "dependencies": {
+        "htmljs-parser": "^2.3.2",
+        "node-sass": "^4.7.2"
+    }
+}
