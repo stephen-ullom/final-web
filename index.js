@@ -1,18 +1,27 @@
+#!/usr/bin/env node
+
 var file = require('./file');
 var parser = require('./parser');
 
 var path = require('path');
 var sass = require('node-sass');
-var beautify = require('js-beautify').html;
+// var beautify = require('js-beautify').html;
 
 var buildDir = './build/';
 var sourceDir = './source/';
 
 // Compile source files
-compile(sourceDir, buildDir);
+if(process.argv[2] && process.argv[3]) {
+    sourceDir = process.argv[2] + '/';
+    buildDir = process.argv[3] + '/';
+    compile(sourceDir, buildDir);
+} else {
+    console.log('Please provide a source folder and an output folder.');
+}
 
 // Compile files
 function compile(source, destination) {
+    file.makeFolder(destination);
     var files = file.list(source);
 
     for (const key in files) {

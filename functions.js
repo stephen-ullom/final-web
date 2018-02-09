@@ -6,7 +6,7 @@ module.exports = {
             // for (const key in args) {
             //     result += args[key].name;
             // }
-            return element('html', attributes);
+            return '<!DOCTYPE html>\n' + element('html', attributes);
         },
         close: '</body>\n</html>'
     },
@@ -296,5 +296,6 @@ function strip(value) {
 
 function setPlaceholders(value) {
     // Replace ${variable} with <?php print $variable ?>    
-    return value.replace(/{/g, '<?php print(').replace(/}/g, '); ?>');
+    var output = value.replace(/{/g, '<?php print(').replace(/}/g, '); ?>');
+    return output;
 }

@@ -1,15 +1,12 @@
 {
     "name": "final-web",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Compile XML .web files to PHP.",
     "main": "index.js",
-    "scripts": {
-        "final": "node final"
-    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Slulego/Final-Web.git"
-      },
+        "url": "https://github.com/slulego/final-web.git"
+    },
     "keywords": [
         "final",
         "web",
@@ -22,5 +19,8 @@
     "dependencies": {
         "htmljs-parser": "^2.3.2",
         "node-sass": "^4.7.2"
+    },
+    "bin": {
+        "final": "index.js"
     }
 }

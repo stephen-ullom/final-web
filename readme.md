@@ -18,8 +18,9 @@ Create a **source/example.web** file inside a **source** folder:
     </paragraph>
 </page>
 ```
+Install Final-Web with NPM ```npm install final-web -g```.
 
-Run the compiler ```node final```.
+Run the compiler "```final source-folder destination-folder```" from the parent directory of the source folder.
 
 Final outputs the following **output/example.php**:
 

@@ -105,7 +105,8 @@ var parser = require('htmljs-parser').createParser({
         // console.log(message + ' at position: ' + position);
     },
 }, {
-    ignorePlaceholders: true
+    ignorePlaceholders: true,
+    isOpenTagOnly: false
 });
 
 function out(value) {
