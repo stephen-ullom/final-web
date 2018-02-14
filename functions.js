@@ -90,6 +90,11 @@ module.exports = {
         },
         close: '</button>'
     },
+    input: {
+        open: function(attributes) {
+            return element('input', attributes, 'input', true);
+        }
+    },
     list: {
         open: function(attributes) {
             return element('ul', attributes, 'list');
