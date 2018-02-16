@@ -1,18 +1,18 @@
 {
-    "name": "final-web",
+    "name": "final-language",
     "version": "0.1.0",
     "description": "Compile XML .web files to PHP.",
     "main": "index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/slulego/final-web.git"
+        "url": "https://github.com/slulego/final-language.git"
     },
     "keywords": [
         "final",
-        "web",
-        "html",
+        "language",
         "xml",
-        "php"
+        "php",
+        "html"
     ],
     "author": "Stephen Ullom",
     "license": "ISC",
