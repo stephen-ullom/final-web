@@ -1,4 +1,4 @@
-# Final-Web Language
+# Final-Language
 
 Compile organized XML files into PHP.
 
@@ -18,7 +18,7 @@ Create a **source/example.web** file inside a **source** folder:
     </paragraph>
 </page>
 ```
-Install Final-Web with NPM ```npm install final-web -g```.
+Install Final-Language with NPM ```npm install final-language -g```.
 
 Run the compiler "```final source-folder destination-folder```" from the parent directory of the source folder.
 
