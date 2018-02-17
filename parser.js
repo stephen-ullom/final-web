@@ -56,7 +56,7 @@ var parser = require('htmljs-parser').createParser({
             return true;
         }
 
-        if (tagName == 'script' || tagName == 'set') {
+        if (tagName == 'script' || tagName == 'javascript' || tagName == 'style') {
             isScript = true;
         } else {
             isScript = false;
