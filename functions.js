@@ -196,7 +196,12 @@ module.exports = {
     },
     include: {
         open: function(attributes) {
-            return '<?php include(' + attributes[0].name + '.".php"); ?>';
+            return '<?php include("' + strip(attributes[0].name) + '.php"); ?>';
+        }
+    },
+    return: {
+        open: function(attributes) {
+            return '<?php return ' + attributes[0].name + '; ?>';
         }
     },
     location: {
