@@ -11,7 +11,7 @@ var buildDir = './build/';
 var sourceDir = './source/';
 
 // Compile source files
-if(process.argv[2] && process.argv[3]) {
+if (process.argv[2] && process.argv[3]) {
     sourceDir = process.argv[2] + '/';
     buildDir = process.argv[3] + '/';
     compile(sourceDir, buildDir);
@@ -47,21 +47,27 @@ function compile(source, destination) {
                         var portion = html.substring(0, error.position);
                         var line = portion.split('\n').length - 1;
 
-                        console.log('Error: ' + error.code + ' at (' + source + files[key] + ':' + line + ':' + error.position + ')');
+                        // console.log('\x1b[1;34m%s\x1b[0m', 'Final Error:', error.code + ' at (' + source + files[key] + ':' + line + ':' + error.position + ')');
+                        showError('Final', error.code, source + files[key] + ':' + line + ':' + error.position);
                     }
                 }
                 break;
             case '.scss':
                 if (sass) {
-                    var scss = file.read(source + files[key]);
-                    if (scss != '') {
-                        var output = sass.renderSync({
-                            data: scss
-                        });
-                        file.write(destination + path.parse(files[key]).name + '.css', output.css);
+                    try {
+                        var scss = file.read(source + files[key]);
+                        if (scss != '') {
+                            var output = sass.renderSync({
+                                data: scss
+                            });
+                            file.write(destination + path.parse(files[key]).name + '.css', output.css);
+                        }
+                    } catch (error) {
+                        showError('Sass', error.message, source + files[key] + ':' + error.line);
                     }
                 } else {
-                    console.log('The node-sass package must be installed to compile .scss files.');
+                    showError('Final', 'The node-sass package must be installed to compile .scss files.');
+
                 }
                 break;
             case '.js':
@@ -84,4 +90,19 @@ function compile(source, destination) {
                 break;
         }
     }
+}
+
+function showError(type, message, location){
+    var color = '0';
+    switch (type.toLowerCase()) {
+        case 'final':
+            // Blue
+            color = '1;34';
+            break;
+        case 'sass':
+            // Blue
+            color = '1;35';
+            break;
+    }
+    console.log('\x1b[' + color + 'm%s\x1b[0m', type + ' Error:', message, '(' + location + ')');
 }
