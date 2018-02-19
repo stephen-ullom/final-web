@@ -215,7 +215,7 @@ module.exports = {
     },
     catch: {
         open: function(attributes, argument) {
-            return '<?php catch (' + argument.name + ') { ?>'
+            return '<?php catch (' + argument.value + ') { ?>'
         },
         close: '<?php } ?>'
     },
