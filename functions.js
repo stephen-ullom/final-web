@@ -95,6 +95,12 @@ module.exports = {
             return element('input', attributes, 'input', true);
         }
     },
+    form: {
+        open: function(attributes) {
+            return element('form', attributes, 'form');
+        },
+        close: '</form>'
+    },
     list: {
         open: function(attributes) {
             return element('ul', attributes, 'list');
