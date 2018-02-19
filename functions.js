@@ -214,8 +214,8 @@ module.exports = {
         close: '<?php } ?>'
     },
     catch: {
-        open: function(attributes) {
-            return '<?php catch (' + attributes[0].name + ') { ?>'
+        open: function(attributes, argument) {
+            return '<?php catch (' + argument.name + ') { ?>'
         },
         close: '<?php } ?>'
     },
