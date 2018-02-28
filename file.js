@@ -12,6 +12,9 @@ module.exports = {
         fs.copyFileSync(path, destination);
         showMessage('Copy', destination);
     },
+    isFolder: function(path) {
+        return fs.lstatSync(path).isDirectory();
+    },
     list: function(path) {
         return fs.readdirSync(path);
     },
