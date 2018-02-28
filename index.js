@@ -60,7 +60,8 @@ function compileFile(source, destination) {
     } else {
         // console.log(source + ' ' + destination);
         var destinationFolder = path.dirname(source.replace(/^[\w-]*/, destination)) + '/';
-        
+        file.makeFolder(destinationFolder);
+
         // console.log(destinationFolder);
         switch (path.extname(source)) {
             case '.web':
@@ -126,8 +127,7 @@ function compileFile(source, destination) {
                 //     }
                 //     break;
             default:
-                // file.makeFolder(destination);
-                file.copy(source, destination + source);
+                file.copy(source, destinationFolder + path.basename(source));
                 break;
         }
     }
