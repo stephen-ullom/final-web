@@ -1,6 +1,6 @@
 {
     "name": "final-language",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Compile XML .web files to PHP.",
     "main": "index.js",
     "repository": {
