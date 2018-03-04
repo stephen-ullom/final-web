@@ -10,9 +10,11 @@
     "keywords": [
         "final",
         "language",
+        "lang",
         "xml",
         "php",
-        "html"
+        "html",
+        "web"
     ],
     "author": "Stephen Ullom",
     "license": "ISC",
