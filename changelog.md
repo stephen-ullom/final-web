@@ -1,3 +1,7 @@
+## Version 0.1.3
+
+Reverted back to original name, final-web.
+
 ## Version 0.1.2
 
 Added support for workspace folders or individual files.
